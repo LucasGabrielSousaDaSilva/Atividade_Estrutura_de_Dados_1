@@ -1,16 +1,15 @@
-package Pilha;
+package Fila;
 
 import java.util.Scanner;
-
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-Main m = new Main();
+		Main m = new Main();
 		
-		PilhaDinamica<Integer> pilhaI = new PilhaDinamica<>();
-		PilhaDinamica<String> pilhaS = new PilhaDinamica<>();
+		FilaDinamica2<Integer> filaI = new FilaDinamica2<>();
+		FilaDinamica2<String> filaS = new FilaDinamica2<>();
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -32,7 +31,7 @@ Main m = new Main();
 					opcao2 = scan.nextInt();
 					while (opcao2 != 2) {
 					System.out.print("Informe um Numero: ");
-					pilhaI.push(scan.nextInt());
+					filaI.inserir(scan.nextInt());
 					opcao2 = 2;
 					}
 				}
@@ -42,7 +41,7 @@ Main m = new Main();
 					opcao2 = scan.nextInt();
 					while (opcao2 != 2) {
 						System.out.print("Informe um Nome: ");
-						pilhaS.push(scan.next());
+						filaS.inserir(scan.next());
 						opcao2 = 2;
 					}
 				}
@@ -53,33 +52,33 @@ Main m = new Main();
 				opcao3 = scan.nextInt();
 				
 				if (opcao3 == 1) {
-					System.out.println("Informe a quantidade de itens que deseja remover pilha 1:");
+					System.out.println("Informe a quantidade de itens que deseja remover fila 1:");
 	                int quant = scan.nextInt();
 	                for (int i = 0; i < quant; i++) {
-	                    pilhaI.pop();
+	                    filaI.remover();
 	                }
 				}
                 if (opcao3 == 2) {
-					System.out.println("Informe a quantidade de itens que deseja remover pilha 2:");
+					System.out.println("Informe a quantidade de itens que deseja remover fila 2:");
 	                int quant2 = scan.nextInt();
 	                for (int i = 0; i < quant2; i++) {
-	                	pilhaS.pop();
+	                	filaS.remover();
 	                }
 				}
 				break;
 			case 3:
-				System.out.println("Tamanho da fila Numero: " + pilhaI.tamanho()); 
-		        System.out.println("Fila vazia?: " + pilhaI.vazia());
+				System.out.println("Tamanho da fila Numero: " + filaI.tamanho()); 
+		        System.out.println("Fila vazia?: " + filaI.vazia());
 		        
-		        System.out.println("Tamanho da fila texto: " + pilhaS.tamanho());
-		        System.out.println("Fila vazia?: " + pilhaS.vazia());
+		        System.out.println("Tamanho da fila texto: " + filaS.tamanho());
+		        System.out.println("Fila vazia?: " + filaS.vazia());
 				break;
 			case 4:
-				System.out.println("Pilha numerica");
-				pilhaI.imprimir();
+				System.out.println("fila numerica");
+				filaI.imprimir();
 				
-				System.out.println("Pilha de Nomes");
-				pilhaS.imprimir();
+				System.out.println("fila de Nomes");
+				filaS.imprimir();
 				break;
 			case 5:
 				System.out.println("Saindo no programa.");
@@ -94,13 +93,14 @@ Main m = new Main();
 		} while (opcao != 5);
 
 	}
-
+	
 	public void menu() {
 		System.out.println("Escolha uma das opções:");
-		System.out.println("1- Inserir elementos na pilha");
-		System.out.println("2- Remover elementos da pilha");
+		System.out.println("1- Inserir elementos na fila");
+		System.out.println("2- Remover elementos da fila");
 		System.out.println("3- Indice");
-		System.out.println("4- Imprimir elementos da pilha");
+		System.out.println("4- Imprimir elementos da fila");
 		System.out.println("5- Sair");
 	}
+
 }
