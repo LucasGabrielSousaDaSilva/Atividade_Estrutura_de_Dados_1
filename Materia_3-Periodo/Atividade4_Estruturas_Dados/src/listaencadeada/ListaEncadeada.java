@@ -19,10 +19,11 @@ public class ListaEncadeada {
 		No novo = new No(elemento);
 		if (inicio == null) {
 			inicio = novo;
-			fim = novo;
+			
 		} else {
 			inicio.setProximo(novo);
 		}
+		fim = novo;
 		posicao++;
 	}
 	
@@ -31,17 +32,16 @@ public class ListaEncadeada {
 		
 		if (inicio == null) {
 			inicio = novo;
-			fim = novo;
+			
 		} else {
 			fim.setProximo(novo);
 		}
+		fim = novo;
 		posicao++;
 	}
 	
 	public void inserirMeio(int elemento) {
-		for (int i = 0; i < posicao; i++) {
 			inserirInicio(elemento);
-		}
 	}
 	
 	public int removerInicio() {
@@ -112,10 +112,14 @@ public class ListaEncadeada {
     }
     
     public void imprimir() {
+        if (estaVazia()) {
+            System.out.println("Lista vazia");
+            return;
+        }
         No atual = inicio;
         while (atual != null) {
             System.out.print(atual.getElemento() + " ");
-            atual.setProximo(atual);
+            atual = atual.getProximo();
         }
         System.out.println();
     }
