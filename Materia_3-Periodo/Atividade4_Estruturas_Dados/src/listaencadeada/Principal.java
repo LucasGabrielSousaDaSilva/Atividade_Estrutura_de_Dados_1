@@ -26,33 +26,18 @@ public class Principal {
 				System.out.print("Deseja adiconar: \n1-Inserir no inicio  \n2-Inserir no Fim  \n3-Inserir no Meio \nOpcao:  ");
 				opcao3 = scan.nextInt();
 				if (opcao3 == 1) {
-					System.out.println("Deseja adcionar mais um? \n1-sim \n2-não");
-					opcao2 = scan.nextInt();
-					while (opcao2 != 2) {
 					System.out.print("Informe um Numero: ");
 					lista.inserirInicio(scan.nextInt());
-					opcao2 = 0;
-					}
 				}
 				
 				if (opcao3 == 2) {
-					System.out.println("Deseja adcionar mais um? \n1-sim \n2-não");
-					opcao2 = scan.nextInt();
-					while (opcao2 != 2) {
-						System.out.print("Informe um Nome: ");
+						System.out.print("Informe um Numero: ");
 						lista.inserirFim(scan.nextInt());
-						opcao2 = 0;
-					}
 				}
 				
 				if (opcao3 == 3) {
-					System.out.println("Deseja adcionar mais um? \n1-sim \n2-não");
-					opcao2 = scan.nextInt();
-					while (opcao2 != 2) {
-						System.out.print("Informe um Nome: ");
+						System.out.print("Informe um Numero: ");
 						lista.inserirMeio(scan.nextInt());
-						opcao2 = 0;
-					}
 				}
 				
 				break;
