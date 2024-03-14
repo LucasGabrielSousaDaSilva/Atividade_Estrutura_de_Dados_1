@@ -19,11 +19,11 @@ public class ListaEncadeada {
 		No novo = new No(elemento);
 		if (inicio == null) {
 			inicio = novo;
-			
+			fim = novo;
 		} else {
 			inicio.setProximo(novo);
 		}
-		fim = novo;
+		
 		posicao++;
 	}
 	
@@ -31,12 +31,11 @@ public class ListaEncadeada {
 		No novo = new No(elemento);
 		
 		if (inicio == null) {
-			inicio = novo;
-			
+			fim = novo;
 		} else {
 			fim.setProximo(novo);
 		}
-		fim = novo;
+		
 		posicao++;
 	}
 	
@@ -58,26 +57,26 @@ public class ListaEncadeada {
 	}
 	
 	public int removerFim() {
-        if (inicio == null) {
-            return -1; // Lista vazia
-        }
-        int dadoRemovido;
-        if (inicio == fim) {
-            dadoRemovido = inicio.getElemento();
-            inicio = null;
-            fim = null;
-        } else {
-            No atual = inicio;
-            while (atual.getProximo() != fim) {
-                atual.setProximo(atual);
-            }
-            dadoRemovido = fim.getElemento();
-            atual.setProximo(null);
-            fim.setProximo(atual);
-        }
-        posicao--;
-        return dadoRemovido;
-    }
+	    if (inicio == null) {
+	        return -1; // Lista vazia
+	    }
+	    int dadoRemovido;
+	    if (inicio == fim) {
+	        dadoRemovido = inicio.getElemento();
+	        inicio = null;
+	        fim = null;
+	    } else {
+	        No atual = inicio;
+	        while (atual.getProximo() != fim) {
+	            atual = atual.getProximo();
+	        }
+	        dadoRemovido = fim.getElemento();
+	        atual.setProximo(null);
+	        fim = atual;
+	    }
+	    posicao--;
+	    return dadoRemovido;
+	}
 	
 	public int removerMeio(int elemento) {
         if (inicio == null) {
