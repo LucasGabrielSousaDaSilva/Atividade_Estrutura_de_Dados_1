@@ -34,6 +34,13 @@ public class ArvoreBinaria {
     }
     
     public No busca(int elemento) {
+    	No nobusca = buscarRecursivo(noRaiz, elemento);
+    	if (nobusca != null) {
+    		 System.out.println("Elemento " + elemento + " encontrado na árvore.");
+		}else {
+            System.out.println("Elemento " + elemento + " não encontrado na árvore.");
+        }
+    	
         return buscarRecursivo(noRaiz, elemento);
         
     }
